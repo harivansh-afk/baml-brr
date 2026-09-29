@@ -7,6 +7,12 @@ The hand-written custom-MIR probe and ordinary Rust dispatcher matched an
 arithmetic oracle for 2,000 inputs. This proves that particular example works,
 not that a general BAML translator is correct or fast.
 
+The MIR-to-Rust worktree now has a source-driven emitter. Eight tests pass:
+source-level control-flow cases match same-checkout BEX, and a constructed
+two-entry MIR cycle matches an oracle in two block layouts (4,004 assertions).
+Malformed edges and uninitialized reads are checked. This covers a narrow
+scalar subset, not full BAML runtime behavior or a performance result.
+
 The snapshot audit found no irreducibility in 55 functions, but only two had
 cycles and implicit exception edges were absent. BAML's general control-flow
 shape remains an open question.

@@ -51,5 +51,8 @@ That is a requirement of this integration, not proof every Worker design
 requires nightly.
 https://github.com/RReverser/wasm-bindgen-rayon#building-rust-code
 
-We have not measured BAML against V8, implemented a BAML native backend,
-or tested parallel browser execution. Those are still experiments to do.
+The MIR-to-Rust worktree now contains the first scalar emitter and eight
+passing tests, including same-checkout BEX control-flow comparisons and a
+two-entry MIR cycle in two layouts. Its README records the tested scope.
+No AOT speedup or parallel browser execution is established here. The separate
+instrumentation directory owns baseline measurements.
