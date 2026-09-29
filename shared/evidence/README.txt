@@ -7,13 +7,13 @@ Source links sit at the bottom of each note.
 BAML was inspected at commit 5956bc4af24521852e6193b1dd5338671f38f51b.
 The existing snapshot audit found no irreducible graphs in 55 functions, but
 only two functions contain cycles and implicit exception edges are missing.
-The full result is in ../rust/mir-to-rust/control-flow/snapshot-audit.json.
+The full result is in ../../options/rust/mir-to-rust/control-flow/snapshot-audit.json.
 
 We also compiled one small experiment. Installed Rust 1.96.0-nightly from
 4 March 2026 accepted a two-entry loop written as custom MIR. An ordinary
 Rust loop/match version produced the same answers. Both matched an independent
 calculation for 2,000 inputs. Source:
-../rust/mir-to-rust/rust-custom-mir/probe.rs.
+../../options/rust/custom-mir/probe.rs.
 This establishes
 that both forms work for that example, not that either is faster or integrates
 with BAML.

@@ -35,6 +35,6 @@ which graphs BAML emits.
 Checked 2026-09-29 UTC against BAML 5956bc4af245.
 
 snapshot-audit.json
-../../../../learning/audit_mir_snapshots.py
-../../../../baml/baml_language/crates/baml_compiler2_mir/src/lower.rs
+../../../../../learning/audit_mir_snapshots.py
+../../../../../baml/baml_language/crates/baml_compiler2_mir/src/lower.rs
 https://llvm.org/doxygen/WebAssemblyFixIrreducibleControlFlow_8cpp.html

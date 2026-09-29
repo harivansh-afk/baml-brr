@@ -28,8 +28,8 @@ binary, BAML in a browser, or cheap isolated execution of many programs.
 Those goals overlap, but they can favor different designs.
 
 Original notes, relative to this folder:
-../../call_notes.md
-../../hari_notes.md
-../../bamlrust.md
+../../../call_notes.md
+../../../hari_notes.md
+../../../bamlrust.md
 
 Also used the LLVM and custom-MIR messages pasted into this conversation.

@@ -37,7 +37,7 @@ logic each needs to duplicate before comparing speed.
 
 Checked 2026-09-29 UTC.
 
-../../../baml/baml_language/crates/baml_compiler2_hir_ty/src/infer.rs
-../../../baml/baml_language/crates/baml_compiler2_mir/src/lower.rs
-../../../call_notes.md
+../../../../baml/baml_language/crates/baml_compiler2_hir_ty/src/infer.rs
+../../../../baml/baml_language/crates/baml_compiler2_mir/src/lower.rs
+../../../../call_notes.md
 https://doc.rust-lang.org/rustc/platform-support/wasm32-unknown-unknown.html

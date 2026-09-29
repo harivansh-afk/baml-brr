@@ -27,7 +27,7 @@ storing known integers or floats directly in generated code. Testing those
 separately tells us where any improvement came from.
 
 Source files, relative to this folder:
-../../baml/baml_language/crates/bex_vm_types/src/roots.rs
-../../baml/baml_language/crates/bex_heap/src/gc.rs
-../../baml/baml_language/crates/bex_vm/src/package_baml/mod.rs
-../../baml/baml_language/crates/bex_vm_types/src/types/value.rs
+../../../baml/baml_language/crates/bex_vm_types/src/roots.rs
+../../../baml/baml_language/crates/bex_heap/src/gc.rs
+../../../baml/baml_language/crates/bex_vm/src/package_baml/mod.rs
+../../../baml/baml_language/crates/bex_vm_types/src/types/value.rs

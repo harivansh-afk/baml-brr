@@ -1,40 +1,33 @@
-BAML, faster
+BAML execution experiments
 
-The project goal in the team notes is faster BAML execution, competitive with
-V8 on realistic workloads with telemetry on. Memory use, startup, throughput,
-and artifact size also matter. Compilation time is a cost to measure; making
-the BAML compiler faster is not the main stated goal.
+Start with options/rust/mir-to-rust/README.txt.
 
-Generating Rust is the proposed means. It is not the success criterion.
+Each option has a short README.txt. Once implementation starts, its baml/
+folder is a Git worktree with its own branch. We create worktrees as needed;
+there is no reason to check out the whole repository for every idea upfront.
 
-Start with confirmed.txt for the verified facts and evidence for each option.
-The individual notes also contain proposed experiments and opinions; those
-are not established results.
+options/rust/mir-to-rust/       Current experiment: actual MIR to Rust.
+options/rust/checked-to-rust/   Generate Rust before MIR lowering.
+options/rust/custom-mir/        Rust's internal MIR interface.
+options/c-clang/                Generate C/C++ for Clang.
+options/llvm-ir/                Emit LLVM IR.
+options/wasm/                   Emit Wasm directly.
+options/cranelift/              Use Cranelift's native backend.
+options/native/                 Own the native code generator.
 
-The proposal favors ahead-of-time compilation: compile before deployment and
-keep the interpreter for development and dynamically compiled BAML. It puts
-JIT outside the initial scope because of its implementation and maintenance
-cost. execution/aot.txt and execution/jit/README.txt explain that distinction.
+execution/ explains AOT and JIT. These describe when compilation happens.
+shared/ holds runtime, browser, evidence, and evaluation notes.
 
-Output choices live beside one another:
+The main BAML checkout is ../baml. The first experiment starts at
+5956bc4af24521852e6193b1dd5338671f38f51b. The main checkout may advance;
+each experiment keeps its recorded base until we deliberately update it.
+Use matching revisions when comparing implementations.
 
-rust/              Generate Rust, then use rustc.
-c-cpp/             Generate C/C++, then use Clang or another compiler.
-llvm/              Generate LLVM IR directly.
-direct-wasm/       Generate Wasm directly.
-cranelift/         Generate native code with Cranelift.
-custom-native/     Own the machine-code generator.
+Baseline measurements and their runner belong in ../instrumentation.
+Experiment code and correctness checks belong in the option's worktree.
+Compare performance only after agreeing on inputs, revision, semantics,
+telemetry, and measured region.
 
-Inside rust/, compare MIR-to-Rust with checked-BAML-to-Rust. The team favors
-Rust because of its existing runtime, but the notes do not establish a measured
-winner. LLVM and C have recorded objections worth testing, not a proof they
-cannot work. JIT and a custom native backend have a higher initial burden.
-
-Native and browser execution are output targets, not separate decisions about
-the language we generate. Rust, Clang, and LLVM can all lead to Wasm. That does
-not automatically port BAML's I/O, scheduler, or shared moving heap to Workers.
-Browser support needs its own execution tests. See
-shared/browser-wasm/README.txt.
-
-shared/ holds the runtime requirements, interpreter, team context, and evidence
-record. next-step.txt proposes small comparisons before choosing a backend.
+Open the baml/ folder to inspect or edit code. Run git diff there to see that
+experiment's changes. The notes repository ignores these nested worktrees;
+it does not track them as submodules.

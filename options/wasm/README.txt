@@ -31,7 +31,7 @@ This is worth exploring if portable delivery or isolated server execution
 matters. Against direct native output, possible costs include host calls, memory
 restrictions, and runtime size. We need measurements. Compare cold loading, warm
 execution, allocation, and GC under the same isolation requirements. Browser
-details are in ../shared/browser-wasm/README.txt.
+details are in ../../shared/browser-wasm/README.txt.
 
 Sources checked 2026-09-29 UTC.
 https://docs.wasmtime.dev/examples-pre-compiling-wasm.html

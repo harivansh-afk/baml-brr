@@ -20,6 +20,6 @@ such as fast execution of code supplied after deployment. Concurrency and
 mutation add work; they do not make JIT fundamentally impossible.
 
 Sources:
-../../bamlrust.md
-../../call_notes.md
-jit/README.txt
+../../../bamlrust.md
+../../../call_notes.md
+../jit/README.txt

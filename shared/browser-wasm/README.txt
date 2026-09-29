@@ -8,7 +8,7 @@ executable can avoid V8 entirely. Those are different goals.
 We could compile the existing interpreter to Wasm, generate Rust and compile
 that to Wasm, or emit Wasm directly from BAML MIR. The first retains
 interpretation. The other two compile the user's operations. See
-../../direct-wasm/README.txt for direct emission and native Wasmtime execution.
+../../options/wasm/README.txt for direct emission and native Wasmtime execution.
 
 Running work in parallel needs Workers, which are browser threads, plus shared
 Wasm memory and atomic operations for synchronization. SharedArrayBuffer exposes
