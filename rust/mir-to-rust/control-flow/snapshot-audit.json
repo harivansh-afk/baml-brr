@@ -1,0 +1,1212 @@
+{
+  "source_revision": "5956bc4af24521852e6193b1dd5338671f38f51b",
+  "input": "Committed textual snapshots; not regenerated in this investigation",
+  "limitation": "No implicit exception edges or catch-region metadata; only entry-reachable printed graphs",
+  "classifier_self_checks": 6,
+  "snapshot_files": 20,
+  "function_bodies": 55,
+  "printed_blocks": 308,
+  "summary": {
+    "normal": {
+      "reachable_blocks": 297,
+      "unreachable_printed_blocks": 11,
+      "reachable_edges": 319,
+      "functions_with_cycles": 2,
+      "dfs_backedges": 3,
+      "irreducible_functions": 0
+    },
+    "explicit_including_unwind": {
+      "reachable_blocks": 308,
+      "unreachable_printed_blocks": 0,
+      "reachable_edges": 340,
+      "functions_with_cycles": 2,
+      "dfs_backedges": 3,
+      "irreducible_functions": 0
+    }
+  },
+  "functions": [
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/compiler2_mir/baml_tests__compiler2_mir__array_rest_binding_no_suffix_slices_to_len.snap",
+      "signature": "user.f(xs: int[]) -> int {",
+      "printed_blocks": 7,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 7,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 8,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 7,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 8,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/compiler2_mir/baml_tests__compiler2_mir__array_rest_binding_with_suffix_slices_middle.snap",
+      "signature": "user.f(xs: int[]) -> int {",
+      "printed_blocks": 7,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 7,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 8,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 7,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 8,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/compiler2_mir/baml_tests__compiler2_mir__match_or_mixed_array_class_binding_uses_branch_local_rest_type.snap",
+      "signature": "user.f(v: NumberBag | int[][]) -> int {",
+      "printed_blocks": 11,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 11,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 16,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 11,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 16,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/compiler2_mir/baml_tests__compiler2_mir__mounted_loc_free_runtime_call_target_is_explicit.snap",
+      "signature": "user.f(t: reflect.Type, value: unknown) -> unknown {",
+      "printed_blocks": 4,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 4,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 4,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 4,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 4,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/compiler2_mir/baml_tests__compiler2_mir__optional_default_prologue_and_source_omission.snap",
+      "signature": "user.add(base: int, amount: int) -> int {",
+      "printed_blocks": 4,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 4,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 4,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 4,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 4,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/compiler2_mir/baml_tests__compiler2_mir__optional_default_prologue_and_source_omission.snap",
+      "signature": "user.main() -> int {",
+      "printed_blocks": 2,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/compiler2_mir/baml_tests__compiler2_mir__optional_dropping_function_value.snap",
+      "signature": "user.combine(x: int, a: int, b: int) -> int {",
+      "printed_blocks": 6,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 6,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 7,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 6,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 7,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/compiler2_mir/baml_tests__compiler2_mir__optional_dropping_function_value.snap",
+      "signature": "user.main() -> int {",
+      "printed_blocks": 2,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/compiler2_mir/baml_tests__compiler2_mir__optional_named_gap_and_explicit_null.snap",
+      "signature": "user.score(query: string, max_results: int, filter: string | null) -> int {",
+      "printed_blocks": 9,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 9,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 11,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 9,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 11,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/compiler2_mir/baml_tests__compiler2_mir__optional_named_gap_and_explicit_null.snap",
+      "signature": "user.is_null(value: int | null) -> bool {",
+      "printed_blocks": 4,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 4,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 4,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 4,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 4,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/compiler2_mir/baml_tests__compiler2_mir__optional_named_gap_and_explicit_null.snap",
+      "signature": "user.omitted_middle() -> int {",
+      "printed_blocks": 2,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/compiler2_mir/baml_tests__compiler2_mir__optional_named_gap_and_explicit_null.snap",
+      "signature": "user.explicit_null() -> bool {",
+      "printed_blocks": 2,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/compiler2_mir/baml_tests__compiler2_mir__optional_named_reordered_args_evaluate_in_source_order.snap",
+      "signature": "user.text(value: string) -> string {",
+      "printed_blocks": 2,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/compiler2_mir/baml_tests__compiler2_mir__optional_named_reordered_args_evaluate_in_source_order.snap",
+      "signature": "user.number(value: int) -> int {",
+      "printed_blocks": 2,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/compiler2_mir/baml_tests__compiler2_mir__optional_named_reordered_args_evaluate_in_source_order.snap",
+      "signature": "user.score(query: string, max_results: int, filter: string) -> int {",
+      "printed_blocks": 6,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 6,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 7,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 6,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 7,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/compiler2_mir/baml_tests__compiler2_mir__optional_named_reordered_args_evaluate_in_source_order.snap",
+      "signature": "user.main() -> int {",
+      "printed_blocks": 5,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 5,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 4,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 5,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 4,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/compiler2_mir/baml_tests__compiler2_mir__reflect_type_of_array.snap",
+      "signature": "user.f() -> reflect.Type {",
+      "printed_blocks": 2,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/compiler2_mir/baml_tests__compiler2_mir__reflect_type_of_array_of_typevar.snap",
+      "signature": "user.f() -> reflect.Type {",
+      "printed_blocks": 2,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/compiler2_mir/baml_tests__compiler2_mir__runtime_type_plan_operations_are_explicit.snap",
+      "signature": "user.accept(value: T) -> T {",
+      "printed_blocks": 2,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/compiler2_mir/baml_tests__compiler2_mir__runtime_type_plan_operations_are_explicit.snap",
+      "signature": "user.f(t: reflect.Type, value: unknown) -> bool {",
+      "printed_blocks": 5,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 5,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 5,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 5,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 5,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/compiler2_mir/baml_tests__compiler2_mir__static_type_binding_loads_its_template_into_the_slot.snap",
+      "signature": "user.erase() -> string {",
+      "printed_blocks": 2,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/compiler2_mir/baml_tests__compiler2_mir__static_type_binding_loads_its_template_into_the_slot.snap",
+      "signature": "user.f(value: unknown) -> bool {",
+      "printed_blocks": 9,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 9,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 11,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 9,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 11,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_catch_throw/mir.snap",
+      "signature": "user.fixtures.catch_throw.SingleCatchWildcard(x: int) -> string {",
+      "printed_blocks": 4,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 2,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 4,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 4,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_catch_throw/mir.snap",
+      "signature": "user.fixtures.catch_throw.CatchWithFallback(x: int) -> string {",
+      "printed_blocks": 7,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 5,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 7,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 8,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_json_to_from_string_concrete/mir.snap",
+      "signature": "user.fixtures.json_to_from_string_concrete.serialize_user(u: fixtures.json_to_from_string_concrete.User) -> string {",
+      "printed_blocks": 2,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_json_to_from_string_concrete/mir.snap",
+      "signature": "user.fixtures.json_to_from_string_concrete.deserialize_user(s: string) -> fixtures.json_to_from_string_concrete.User {",
+      "printed_blocks": 2,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_json_to_from_string_generic_forwarding/mir.snap",
+      "signature": "user.fixtures.json_to_from_string_generic_forwarding.fetch_as(s: string) -> T {",
+      "printed_blocks": 2,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_lambda_basic/mir.snap",
+      "signature": "user.fixtures.lambda_basic.test_capture() -> int {",
+      "printed_blocks": 2,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_lambda_basic/mir.snap",
+      "signature": ".<lambda(test_capture, 0)>(x: int) -> int {",
+      "printed_blocks": 2,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_lambda_basic/mir.snap",
+      "signature": "user.fixtures.lambda_basic.test_nested() -> int {",
+      "printed_blocks": 2,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_lambda_basic/mir.snap",
+      "signature": ".<lambda(test_nested, 0)>(x: int) -> int {",
+      "printed_blocks": 2,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_lambda_basic/mir.snap",
+      "signature": ".<lambda(<lambda(test_nested, 0)>, 1)>(y: int) -> int {",
+      "printed_blocks": 2,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_llm_quoted_prompt/mir.snap",
+      "signature": "user.fixtures.llm_quoted_prompt.QuotedPrompt(topic: string, client: null | ai.Client, on_event: null | ((ai.events.AssistantMessage | ai.events.FinalProduced | ai.events.LLMCall | ai.events.RunStarted | ai.events.ToolCompleted | ai.events.ToolFailed | ai.events.ToolRequested | ai.events.Usage | ai.events.UserMessage) -> void throws never)) -> string {",
+      "printed_blocks": 9,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 9,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 10,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 9,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 10,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_llm_quoted_prompt/mir.snap",
+      "signature": "user.fixtures.llm_quoted_prompt.QuotedPrompt@build_request(topic: string, client: null | ai.Client) -> baml.http.Request {",
+      "printed_blocks": 5,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 5,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 5,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 5,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 5,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_llm_quoted_prompt/mir.snap",
+      "signature": "user.fixtures.llm_quoted_prompt.QuotedPrompt@parse(json: string) -> string {",
+      "printed_blocks": 2,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_llm_quoted_prompt/mir.snap",
+      "signature": "user.fixtures.llm_quoted_prompt.QuotedPrompt@render_prompt(topic: string) -> ai.Prompt {",
+      "printed_blocks": 3,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 3,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 2,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 3,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 2,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_llm_quoted_prompt/mir.snap",
+      "signature": "user.fixtures.llm_quoted_prompt.QuotedPrompt@spec(topic: string) -> ai.FunctionSpec<string> {",
+      "printed_blocks": 4,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 4,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 3,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 4,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 3,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_llm_quoted_prompt/mir.snap",
+      "signature": ".<lambda(QuotedPrompt@spec, 0)>( __spec_output_format: ai.OutputFormat) -> ai.Prompt {",
+      "printed_blocks": 5,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 3,
+          "unreachable_printed_blocks": 2,
+          "reachable_edges": 2,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 5,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 5,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_llm_quoted_prompt/mir.snap",
+      "signature": ".<lambda(QuotedPrompt@spec, 1)>(prefix: string, model: string) -> null | ai.Client {",
+      "printed_blocks": 28,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 28,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 40,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 28,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 40,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_llm_quoted_prompt/mir.snap",
+      "signature": "user.fixtures.llm_quoted_prompt.QuotedPrompt@stream(topic: string, client: null | ai.stream.StreamingClient, on_event: null | ((ai.events.AssistantMessage | ai.events.FinalProduced | ai.events.LLMCall | ai.events.RunStarted | ai.events.ToolCompleted | ai.events.ToolFailed | ai.events.ToolRequested | ai.events.Usage | ai.events.UserMessage) -> void throws never)) -> ai.stream.Stream<string> {",
+      "printed_blocks": 7,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 7,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 8,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 7,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 8,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_llm_quoted_prompt/mir.snap",
+      "signature": "user.fixtures.llm_quoted_prompt.BacktickPrompt(topic: string, client: null | ai.Client, on_event: null | ((ai.events.AssistantMessage | ai.events.FinalProduced | ai.events.LLMCall | ai.events.RunStarted | ai.events.ToolCompleted | ai.events.ToolFailed | ai.events.ToolRequested | ai.events.Usage | ai.events.UserMessage) -> void throws never)) -> string {",
+      "printed_blocks": 9,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 9,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 10,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 9,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 10,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_llm_quoted_prompt/mir.snap",
+      "signature": "user.fixtures.llm_quoted_prompt.BacktickPrompt@build_request(topic: string, client: null | ai.Client) -> baml.http.Request {",
+      "printed_blocks": 5,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 5,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 5,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 5,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 5,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_llm_quoted_prompt/mir.snap",
+      "signature": "user.fixtures.llm_quoted_prompt.BacktickPrompt@parse(json: string) -> string {",
+      "printed_blocks": 2,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 2,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 1,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_llm_quoted_prompt/mir.snap",
+      "signature": "user.fixtures.llm_quoted_prompt.BacktickPrompt@render_prompt(topic: string) -> ai.Prompt {",
+      "printed_blocks": 3,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 3,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 2,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 3,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 2,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_llm_quoted_prompt/mir.snap",
+      "signature": "user.fixtures.llm_quoted_prompt.BacktickPrompt@spec(topic: string) -> ai.FunctionSpec<string> {",
+      "printed_blocks": 4,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 4,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 3,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 4,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 3,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_llm_quoted_prompt/mir.snap",
+      "signature": ".<lambda(BacktickPrompt@spec, 0)>( __spec_output_format: ai.OutputFormat) -> ai.Prompt {",
+      "printed_blocks": 10,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 8,
+          "unreachable_printed_blocks": 2,
+          "reachable_edges": 7,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 10,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 15,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_llm_quoted_prompt/mir.snap",
+      "signature": ".<lambda(BacktickPrompt@spec, 1)>(prefix: string, model: string) -> null | ai.Client {",
+      "printed_blocks": 28,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 28,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 40,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 28,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 40,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_llm_quoted_prompt/mir.snap",
+      "signature": "user.fixtures.llm_quoted_prompt.BacktickPrompt@stream(topic: string, client: null | ai.stream.StreamingClient, on_event: null | ((ai.events.AssistantMessage | ai.events.FinalProduced | ai.events.LLMCall | ai.events.RunStarted | ai.events.ToolCompleted | ai.events.ToolFailed | ai.events.ToolRequested | ai.events.Usage | ai.events.UserMessage) -> void throws never)) -> ai.stream.Stream<string> {",
+      "printed_blocks": 7,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 7,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 8,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 7,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 8,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_parser_statements/mir.snap",
+      "signature": "user.fixtures.parser_statements.simple_while_loop() -> int {",
+      "printed_blocks": 5,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 5,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 5,
+          "backedges": [
+            [
+              4,
+              1
+            ]
+          ],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 5,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 5,
+          "backedges": [
+            [
+              4,
+              1
+            ]
+          ],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_patterns_new/mir.snap",
+      "signature": "user.fixtures.patterns_new.or_with_repeated_typed_binding(v: int | string) -> int {",
+      "printed_blocks": 6,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 6,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 7,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 6,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 7,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_patterns_new/mir.snap",
+      "signature": "user.fixtures.patterns_new.chain_narrow_then_wildcard(v: int | string | bool) -> int {",
+      "printed_blocks": 4,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 4,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 4,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 4,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 4,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_short_circuit_locals/mir.snap",
+      "signature": "user.fixtures.short_circuit_locals.chained_and(a: bool, b: bool, c: bool) -> bool {",
+      "printed_blocks": 6,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 6,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 7,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 6,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 7,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_short_circuit_locals/mir.snap",
+      "signature": "user.fixtures.short_circuit_locals.conditional_short_circuit_in_loop(items: int[], a: bool, b: bool) -> int {",
+      "printed_blocks": 11,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 11,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 14,
+          "backedges": [
+            [
+              7,
+              1
+            ],
+            [
+              8,
+              1
+            ]
+          ],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 11,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 14,
+          "backedges": [
+            [
+              7,
+              1
+            ],
+            [
+              8,
+              1
+            ]
+          ],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_short_circuit_locals/mir.snap",
+      "signature": "user.fixtures.short_circuit_locals.mixed_join(a: bool, b: bool, cond: bool) -> bool {",
+      "printed_blocks": 7,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 7,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 8,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 7,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 8,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    },
+    {
+      "file": "baml/baml_language/crates/baml_tests/snapshots/baml_src/ns_fixtures/ns_short_circuit_locals/mir.snap",
+      "signature": "user.fixtures.short_circuit_locals.coalesced_lengths_compared_apart() -> bool {",
+      "printed_blocks": 14,
+      "modes": {
+        "normal": {
+          "reachable_blocks": 14,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 18,
+          "backedges": [],
+          "non_dominating_backedges": []
+        },
+        "explicit_including_unwind": {
+          "reachable_blocks": 14,
+          "unreachable_printed_blocks": 0,
+          "reachable_edges": 18,
+          "backedges": [],
+          "non_dominating_backedges": []
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+Research record — 29 September 2026
+
+The option notes use official documentation and source code fetched today.
+Something being available today does not mean it was introduced this week.
+Source links sit at the bottom of each note.
+
+BAML was inspected at commit 5956bc4af24521852e6193b1dd5338671f38f51b.
+The existing snapshot audit found no irreducible graphs in 55 functions, but
+only two functions contain cycles and implicit exception edges are missing.
+The full result is in ../rust/mir-to-rust/control-flow/snapshot-audit.json.
+
+We also compiled one small experiment. Installed Rust 1.96.0-nightly from
+4 March 2026 accepted a two-entry loop written as custom MIR. An ordinary
+Rust loop/match version produced the same answers. Both matched an independent
+calculation for 2,000 inputs. Source:
+../rust/mir-to-rust/rust-custom-mir/probe.rs.
+This establishes
+that both forms work for that example, not that either is faster or integrates
+with BAML.
+
+The research also checked Cranelift's support for inlining and finding live
+GC references, BAML's single-threaded Wasm execution path, and Wasmtime's
+memory isolation rules. Those findings are in the relevant option notes.
+
+The source versions recorded during this research were:
+
+Rust custom MIR documentation: 1.101.0-nightly, c1070d693, 28 September.
+Its arbitrary-cast support was added on 10 September.
+https://doc.rust-lang.org/nightly/core/intrinsics/mir/index.html
+
+LLVM latest release endpoint: 23.1.2, published 22 September.
+https://github.com/llvm/llvm-project/releases/tag/llvmorg-23.1.2
+
+Cranelift source: a7b4f29596bf686c9293459e29a9d669b79ec503, 28 September.
+Cranelift JIT docs: 0.136.1, published 24 September.
+https://docs.rs/cranelift-jit/0.136.1/cranelift_jit/struct.JITModule.html
+
+Rust's Cranelift backend: c6cc12438e36971a6abd17738d1dbb686a201b60.
+Its checked source pins nightly-2026-09-28.
+https://github.com/rust-lang/rustc_codegen_cranelift
+
+Wasmtime latest release endpoint: 49.0.1, published 24 September.
+https://github.com/bytecodealliance/wasmtime/releases/tag/v49.0.1
+
+Wasm specification page: version 3.0, dated 21 September. Browser support
+must still be checked feature by feature.
+https://webassembly.github.io/spec/core/intro/introduction.html
+
+wasm-bindgen-rayon still documents nightly/build-std for its Worker setup.
+That is a requirement of this integration, not proof every Worker design
+requires nightly.
+https://github.com/RReverser/wasm-bindgen-rayon#building-rust-code
+
+We have not measured BAML against V8, implemented a BAML native backend,
+or tested parallel browser execution. Those are still experiments to do.

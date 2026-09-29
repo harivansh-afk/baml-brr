@@ -1,0 +1,198 @@
+What we know before choosing an implementation
+
+Checked 29 September 2026. Local BAML: 5956bc4af245.
+
+These are bounded facts, not a ranking. A source inspection confirms what the
+checked code contains. Documentation confirms an upstream capability. A test
+confirms the tested behavior on that toolchain and input set. None of these
+establishes a BAML speedup unless we actually measure BAML execution.
+
+The goal in the team notes is faster execution. The proposal favors AOT and
+Rust, but that is a proposed direction, not evidence that Rust wins.
+
+1. BAML MIR to ordinary Rust
+
+BAML MIR has local variables, statements, basic blocks, and explicit branches.
+The implementation lives in baml_compiler2_mir. It already lowers source-level
+behavior such as cleanup into operations and control flow.
+
+Our hand-written two-entry loop and its ordinary Rust loop/match equivalent
+both matched an independent arithmetic answer for 2,000 inputs. They compiled
+using rustc 1.96.0-nightly, dated 4 March 2026. The dispatcher uses ordinary
+stable-language constructs; this was not a separate stable-toolchain build.
+
+That proves this example works. It was not generated from BAML and establishes
+neither a general translator nor its speed. The snapshot audit found no
+irreducibility in 55 functions, but only two contained cycles and implicit
+exception edges were missing. Whether real BAML needs difficult restructuring
+remains open.
+
+Evidence:
+../baml/baml_language/crates/baml_compiler2_mir/src/ir.rs
+../baml/baml_language/crates/baml_compiler2_mir/src/lower.rs
+rust/mir-to-rust/rust-custom-mir/probe.rs
+rust/mir-to-rust/control-flow/snapshot-audit.json
+
+2. Checked BAML to ordinary Rust
+
+The compiler retains source structure and records expression types, resolved
+members, call plans, and required conversions in InferenceResult. Existing MIR
+lowering consumes that information.
+
+MIR lowering also contains behavior an earlier generator must account for.
+For example, break and continue replay deferred cleanup; exceptions use
+separate handler paths. Rust does not infer those BAML rules from source names.
+
+We have not implemented this generator. The inspected facts establish available
+inputs and existing lowering responsibilities, not how easy this route is.
+Fewer named compiler stages do not establish faster execution.
+
+Evidence:
+../baml/baml_language/crates/baml_compiler2_hir_ty/src/infer.rs
+../baml/baml_language/crates/baml_compiler2_mir/src/lower.rs
+
+3. BAML MIR to Rust's custom MIR
+
+Rust documents a nightly-only feature for writing function bodies as MIR,
+including explicit jumps. Its documentation calls it exceptionally unstable
+and intended for rustc's own tests.
+
+Our small custom-MIR function compiled and passed the 2,000-input check above.
+BAML MIR and Rust MIR have different definitions and operations. We have not
+built a translation between them or shown a speed advantage over ordinary Rust.
+
+Evidence:
+rust/mir-to-rust/rust-custom-mir/probe.rs
+https://doc.rust-lang.org/nightly/core/intrinsics/mir/index.html
+
+4. BAML to C/C++, compiled with Clang
+
+C has labels and goto. C++ also has jumps, with restrictions around object
+initialization and lifetime. Clang/LLVM can target native machines and Wasm.
+
+Rust explicitly documents cross-language link-time optimization with C ABI
+dependencies. It requires compatible LLVM-based tooling and matching LTO modes.
+A C-compatible runtime interface therefore does not categorically prohibit LTO.
+
+We have not built a BAML C emitter, runtime interface, or cross-language LTO
+experiment. Its maintenance cost and performance remain unmeasured.
+
+Evidence:
+https://www.gnu.org/software/c-intro-and-ref/manual/html_node/goto-Statement.html
+https://eel.is/c++draft/stmt.dcl#3
+https://lld.llvm.org/WebAssembly.html
+https://doc.rust-lang.org/rustc/linker-plugin-lto.html
+
+5. BAML to LLVM IR
+
+LLVM IR supports basic blocks and branches, including irreducible loops.
+LLVM's Wasm backend has a pass that adds dispatch blocks to repair multi-entry
+loops. It produces another graph; it is not a Rust source generator.
+
+LLVM documents support for finding and relocating live GC references through
+statepoints. No connection between that machinery and BAML's collector has
+been implemented in this investigation.
+
+We have not built a BAML LLVM emitter. There is no measured advantage here
+over Rust output, which normally also goes through LLVM.
+
+Evidence:
+https://llvm.org/docs/LangRef.html
+https://llvm.org/docs/Statepoints.html
+https://llvm.org/doxygen/WebAssemblyFixIrreducibleControlFlow_8cpp.html
+https://rustc-dev-guide.rust-lang.org/backend/codegen.html
+
+6. BAML to Cranelift
+
+Cranelift has object-file and JIT modules: it can compile ahead of deployment
+or generate callable code while running. The checked target implementation
+includes aarch64 and x86-64, but no browser Wasm output target.
+
+Its frontend exposes GC stack-map support. Its inliner accepts callee bodies
+in Cranelift's representation. These are existing mechanisms; they do not
+automatically integrate BAML's collector or expose LLVM-compiled runtime bodies.
+
+Generating Rust and using rustc_codegen_cranelift is another documented route,
+currently using nightly tooling. We have not benchmarked either route on BAML.
+
+Evidence:
+https://github.com/bytecodealliance/wasmtime/tree/main/cranelift/object
+https://github.com/bytecodealliance/wasmtime/tree/main/cranelift/jit
+https://github.com/bytecodealliance/wasmtime/blob/main/cranelift/frontend/src/frontend.rs
+https://github.com/bytecodealliance/wasmtime/blob/main/cranelift/codegen/src/inline.rs
+https://github.com/bytecodealliance/wasmtime/blob/main/cranelift/codegen/src/isa/mod.rs
+https://github.com/rust-lang/rustc_codegen_cranelift
+
+7. BAML to Wasm directly
+
+Wasm is executable through browser engines and through runtimes such as
+Wasmtime. V8 documents its own Wasm compilation pipeline; Wasmtime is a separate
+runtime. Wasmtime supports precompilation as well as compilation when loading.
+
+Rust and Clang can also target Wasm, so direct emission is not required for
+browser delivery. The current BAML Wasm yield code explicitly assumes
+single-threaded execution. Shared-heap execution across Workers is unverified.
+
+We have not built a direct BAML-to-Wasm emitter or measured it against another
+route. A native prototype working does not establish browser runtime support.
+
+Evidence:
+https://v8.dev/docs/wasm-compilation-pipeline
+https://docs.wasmtime.dev/examples-pre-compiling-wasm.html
+https://doc.rust-lang.org/rustc/platform-support/wasm32-unknown-unknown.html
+../baml/baml_language/crates/bex_vm_types/src/lib.rs
+
+8. Our own native machine-code generator
+
+Existing native backends perform instruction selection, register allocation,
+calling-convention handling, and code emission. Libraries such as regalloc2
+provide some of these pieces. A custom backend must implement or integrate
+the corresponding pieces it needs.
+
+There is no BAML custom-backend prototype or performance result from this work.
+We have no measured evidence that owning these pieces benefits this project.
+
+Evidence:
+https://llvm.org/docs/CodeGenerator.html
+https://github.com/bytecodealliance/regalloc2
+
+9. Improve the existing interpreter
+
+The checked BEX compact opcode enum has 129 variants. It already contains
+specialized arithmetic, fused local movement, and a specialized exact-call
+opcode. The engine already drives this interpreter and handles its yields.
+
+We have not profiled a representative workload here or implemented a new
+super-instruction. The available code does not tell us how much time a chosen
+workload spends dispatching instructions rather than allocating or calling
+runtime helpers.
+
+Evidence:
+../baml/baml_language/crates/bex_vm_types/src/bytecode.rs
+../baml/baml_language/crates/bex_vm/src/vm.rs
+../baml/baml_language/crates/bex_engine/src/lib.rs
+
+AOT and JIT describe timing, not another output format
+
+The team proposal favors AOT for release builds and an interpreter for
+development and runtime compilation. The call notes exclude JIT initially.
+LLVM ORC and Cranelift both provide JIT machinery. No BAML JIT was implemented
+or benchmarked here. Supporting it is a project decision, not something ruled
+out by the existence of mutation or concurrency.
+
+Evidence:
+../bamlrust.md
+../call_notes.md
+https://llvm.org/docs/ORCv2.html
+
+Shared fact for every route
+
+BAML's collector moves objects, and RootHaver exposes methods to collect and
+update live references. Builtins currently take a BexVm argument. A backend
+using this runtime must participate in those contracts. None of our small
+code-generation examples establishes that integration yet.
+
+Evidence:
+../baml/baml_language/crates/bex_heap/src/gc.rs
+../baml/baml_language/crates/bex_vm_types/src/roots.rs
+../baml/baml_language/crates/bex_vm/src/package_baml/mod.rs

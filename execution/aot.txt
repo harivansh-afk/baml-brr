@@ -1,0 +1,25 @@
+Ahead-of-time compilation
+
+AOT means compiling before deployment. The resulting program starts without
+having to compile its BAML functions during execution. A native executable
+contains machine code. A Wasm build contains portable instructions that the
+browser or another Wasm engine still validates and compiles or interprets.
+
+The team's proposal explicitly favors this approach for release builds. It
+accepts that Rust compilation may be slow and suggests retaining BEX for
+development. It also suggests keeping the bytecode compiler and VM available
+for applications that use runtime Package.compile.
+
+Rust, C/Clang, LLVM IR, Cranelift, and Wasm can all participate in an AOT
+design.
+Choosing AOT does not choose the output language or backend.
+
+JIT remains a valid research topic, but it was explicitly excluded from the
+initial project in the call notes. Reopening it should be tied to a requirement,
+such as fast execution of code supplied after deployment. Concurrency and
+mutation add work; they do not make JIT fundamentally impossible.
+
+Sources:
+../../bamlrust.md
+../../call_notes.md
+jit/README.txt
