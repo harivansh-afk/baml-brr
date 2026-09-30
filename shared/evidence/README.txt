@@ -56,3 +56,9 @@ passing tests, including same-checkout BEX control-flow comparisons and a
 two-entry MIR cycle in two layouts. Its README records the tested scope.
 No AOT speedup or parallel browser execution is established here. The separate
 instrumentation directory owns baseline measurements.
+
+The next runtime extraction is also validated: generated programs link the
+new bex_runtime instead of copied helpers, and existing VM paths reuse it.
+12 shared-operation tests, 8 native-root tests, 91 VM unit tests, 5 VM stack
+integration tests, and the 8 emitter tests passed. Native roots were checked
+with real moving collections; that is not yet generated-array execution.

@@ -17,9 +17,14 @@ That gives us an early experiment: create an array, keep it alive, allow a
 collection, then read it again. Try the same thing while a task is suspended,
 and with two variables sharing the array.
 
-Some runtime code is already in reusable crates. Some still expects a BexVm
-argument. We should identify the small set of functions generated code needs
-before deciding to move everything into a new crate.
+The MIR-to-Rust worktree now has bex_runtime. BEX and generated arithmetic
+share its operations and panic payloads; array index rules moved there too.
+The existing bex_heap and bex_vm_types remain separate shared foundations.
+
+A native-root holder is tested against actual moving GC, including aliases,
+write barriers, and release notification. It does not yet give the compiler
+scoped native call frames or resumable execution. See the production plan:
+../../options/rust/mir-to-rust/runtime/README.txt
 
 There are also two different performance changes here. We can remove the work
 of reading bytecode while retaining BAML's current values. Later we can try
